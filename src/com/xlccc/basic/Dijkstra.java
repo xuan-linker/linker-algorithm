@@ -5,6 +5,7 @@ package com.xlccc.basic;
  * @Date 2020/5/9 9:55 下午
  * @Version 1.0
  * TODO:单源最短路径
+ * FROM:https://www.javazhiyin.com/51307.html
  */
 public class Dijkstra {
     public static void main(String[] args) {
@@ -72,17 +73,17 @@ public class Dijkstra {
             book[tempj] = 1;
             //已tempj顶点为起点（此时tempj离1点最小路径已确定）
             //对每个点进行一次比较
-            for (int v = 1; v <= n ; v++) {
+            for (int v = 1; v <= n; v++) {
                 //当tempj到v顶点的距离小于无穷大并且1号点到tempj顶点的距离
                 //加上tempj点到v点的距离小于，1号点到v点的距离
                 //说明已经找到一条比1-v更短的路径1-tempj-v，更新最小值dis[v]
-                if (e[tempj][v] < max && dis[v] > dis[tempj] + e[tempj][v]){
+                if (e[tempj][v] < max && dis[v] > dis[tempj] + e[tempj][v]) {
                     dis[v] = dis[tempj] + e[tempj][v];
                 }
             }
         }
-        for (int i = 1; i <=n ; i++) {
-            System.out.println("1号点到"+i+"号顶点的最短路径为:"+dis[i]+"");
+        for (int i = 1; i <= n; i++) {
+            System.out.println("1号点到" + i + "号顶点的最短路径为:" + dis[i] + "");
         }
     }
 }
