@@ -240,7 +240,7 @@ public class ASearchAlgorithm {
             System.out.println();
         }
         System.out.println();
-        // detial path
+        // detail path
         for (int i = arrayList.size() - 1; i >= 0; i--) {
             if (i == 0) {
                 System.out.print(arrayList.get(i));
