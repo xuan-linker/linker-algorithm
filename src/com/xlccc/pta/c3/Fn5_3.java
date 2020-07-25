@@ -7,7 +7,7 @@ package com.xlccc.pta.c3;
  */
 public class Fn5_3 {
     public static void main(String[] args) {
-        int n = Common.sc.nextInt();
+        int n = Common.SC.nextInt();
 
         pyramid(n);
 

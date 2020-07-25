@@ -44,11 +44,11 @@ public class Ex5_3 {
      */
     public static void main(String[] args) {
         double x1, x2, y1, y2;
-        x1 = Common.sc.nextDouble();
+        x1 = Common.SC.nextDouble();
 
-        y1 = Common.sc.nextDouble();
-        x2 = Common.sc.nextDouble();
-        y2 = Common.sc.nextDouble();
+        y1 = Common.SC.nextDouble();
+        x2 = Common.SC.nextDouble();
+        y2 = Common.SC.nextDouble();
 
         System.out.println(dist(x1, y1, x2, y2));
     }

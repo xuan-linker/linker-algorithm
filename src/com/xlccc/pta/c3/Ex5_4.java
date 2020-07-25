@@ -46,8 +46,8 @@ public class Ex5_4 {
      */
     public static void main(String[] args) {
         int m, n;
-        m = Common.sc.nextInt();
-        n = Common.sc.nextInt();
+        m = Common.SC.nextInt();
+        n = Common.SC.nextInt();
         System.out.println(PrimeSum(m, n));
     }
 

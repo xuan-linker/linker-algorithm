@@ -34,7 +34,7 @@ public class Ex5_1 {
      */
     public static void main(String[] args) {
 
-        int x = Common.sc.nextInt();
+        int x = Common.SC.nextInt();
         System.out.println(sign(x));
     }
 

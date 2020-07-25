@@ -1,7 +1,5 @@
 package com.xlccc.pta.c3;
 
-import java.util.Scanner;
-
 /**
  * @author Linker
  * @date 2020/7/23 21:22
@@ -48,9 +46,9 @@ public class Fn5_1 {
     public static void main(String[] args) {
         int m, n;
 
-        m = Common.sc.nextInt();
+        m = Common.SC.nextInt();
 
-        n = Common.sc.nextInt();
+        n = Common.SC.nextInt();
 
         System.out.println(sum(m, n));
     }

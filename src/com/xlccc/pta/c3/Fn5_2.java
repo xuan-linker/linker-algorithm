@@ -36,8 +36,8 @@ public class Fn5_2 {
      */
 
     public static void main(String[] args) {
-        int a = Common.sc.nextInt();
-        int b = Common.sc.nextInt();
+        int a = Common.SC.nextInt();
+        int b = Common.SC.nextInt();
 
         System.out.println(max(a, b));
     }

@@ -7,6 +7,6 @@ import java.util.Scanner;
  * @date 2020/7/23 21:35
  * @description：
  */
-public class Common {
-    public static Scanner sc = new Scanner(System.in);
+public  class Common {
+    public static Scanner SC = new Scanner(System.in);
 }

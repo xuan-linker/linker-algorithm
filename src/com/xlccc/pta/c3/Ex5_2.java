@@ -46,11 +46,11 @@ public class Ex5_2 {
      * Sum of ( -3 7 15 ) = 19
      */
     public static void main(String[] args) {
-        int count = Common.sc.nextInt();
+        int count = Common.SC.nextInt();
 
         int[] list = new int[count];
         for (int i = 0; i < count; i++) {
-            list[i] = Common.sc.nextInt();
+            list[i] = Common.SC.nextInt();
         }
         System.out.println(OddSum(list, count));
     }
