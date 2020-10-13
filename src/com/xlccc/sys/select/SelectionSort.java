@@ -31,23 +31,36 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 4, 2, 3, 6, 5};
-        SelectionSort.sort(arr);
-        for (int e : arr
-        ) {
-            System.out.println(e + " ");
-        }
-        System.out.println();
-
-        Student[] students = {new Student("a", 1),
-                new Student("b", 2),
-                new Student("c", 3)};
-        SelectionSort.sort(students);
-        for (Student s : students
-        ) {
-            System.out.println(s);
-
-        }
+//        //
+//        Integer[] arr = {1, 4, 2, 3, 6, 5};
+//        SelectionSort.sort(arr);
+//        for (int e : arr
+//        ) {
+//            System.out.println(e + " ");
+//        }
+//        System.out.println();
+//
+//        //
+//        Student[] students = {new Student("a", 1),
+//                new Student("b", 2),
+//                new Student("c", 3)};
+//        SelectionSort.sort(students);
+//        for (Student s : students
+//        ) {
+//            System.out.println(s);
+//
+//        }
 //        System.out.println(Arrays.toString(arr));
+        //
+
+        int[] dataSize = {10000,100000};
+        for (int n : dataSize
+             ) {
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+            SortingHelper.sortTest("SelectionSort", arr);
+        }
+
+
+
     }
 }
