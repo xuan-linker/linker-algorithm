@@ -1,6 +1,6 @@
-package com.xlccc.sys;
+package com.xlccc.sys.line;
 
-import com.xlccc.sys.homework.Student;
+import com.xlccc.sys.line.homework.Student;
 
 /**
  * @author Linker

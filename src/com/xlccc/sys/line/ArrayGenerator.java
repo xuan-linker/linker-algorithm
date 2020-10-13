@@ -1,4 +1,4 @@
-package com.xlccc.sys;
+package com.xlccc.sys.line;
 
 /**
  * @author Linker
