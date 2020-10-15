@@ -59,8 +59,5 @@ public class SelectionSort {
             Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
             SortingHelper.sortTest("SelectionSort", arr);
         }
-
-
-
     }
 }
