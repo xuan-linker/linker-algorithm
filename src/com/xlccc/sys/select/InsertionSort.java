@@ -11,6 +11,15 @@ public class InsertionSort {
     public InsertionSort() {
     }
 
+    /**
+     * [0,n) -> n++
+     * n-j->0
+     * swap(arr , j , j-1)
+     * j--
+     *
+     * @param arr
+     * @param <E>
+     */
     public static <E extends Comparable<E>> void sort(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
 
@@ -38,6 +47,14 @@ public class InsertionSort {
      * 2,3,4,1,1
      * 2,3,4,5,1
      * 2,3,4,5,1
+     * <p>
+     * [0,n) -> n++
+     * t = arr[n]
+     * n-j->0
+     * arr[j-1] = arr[j]
+     * j--
+     * break
+     * arr[j] = t
      *
      * @param arr
      * @param <E>

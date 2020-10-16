@@ -3,7 +3,7 @@ package com.xlccc.sys.select;
 /**
  * @author Linker
  * @date 2020/10/13 16:01
- * @description：
+ * @description：选择排序算法
  */
 public class SelectionSort {
     public SelectionSort() {
