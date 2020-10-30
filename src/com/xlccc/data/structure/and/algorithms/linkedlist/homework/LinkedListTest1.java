@@ -25,10 +25,16 @@ public class LinkedListTest1 {
         System.out.println("size:" + t.size());
 
         t.add(1);
+        t.add(4);
+        t.add(6);
+        t.add(7);
+        t.add(7);
+        t.add(7);
         t.add(2);
         t.add(3);
         System.out.println(t.size());
         traverse();
+        System.out.println("--------------");
         System.out.println(t.get(0));
         System.out.println(t.get(2));
 
@@ -36,6 +42,7 @@ public class LinkedListTest1 {
         System.out.println(t.contains(4));
 
         traverse();
+        System.out.println("--------------");
 
         t.add(2, 99);
         traverse();
@@ -44,7 +51,25 @@ public class LinkedListTest1 {
         traverse();
 //        System.out.println(t.indexOf(111));
         System.out.println("removeInt: " + t.removeInt(99));
+        System.out.println("--------------");
+
         traverse();
+        System.out.println("-------排序-------");
+        t.sortLinkList();
+        traverse();
+
+        System.out.println("------链表反转--------");
+
+//        head = reverseLinkedList(head);
+//        head.next = temp;
+//        System.out.println(head);
+//        traverse();
+        System.out.println("------链表反转2--------");
+        Node node = reverseLinkedList2();
+        head = node;
+        traverse();
+
+
     }
 
 
@@ -176,6 +201,81 @@ public class LinkedListTest1 {
             temp = temp.next;
         }
     }
+
+    public void sortLinkList() {
+        //冒泡排序
+
+        for (Node temp = head; temp != null; temp = temp.next) {
+            for (Node nextTemp = temp; nextTemp != null; nextTemp = nextTemp.next) {
+                if (nextTemp.data < temp.data) {
+                    int tempData = nextTemp.data;
+                    nextTemp.data = temp.data;
+                    temp.data = tempData;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 反转链表
+     * 1 2 3 4
+     * 4 3 2 1
+     *
+     * @param node
+     */
+    public static Node reverseLinkedList(Node node) {
+        Node prev;
+
+        if (node == null || node.next == null) {
+            prev = node;
+        } else {
+            //边界存在问题
+            Node tmp = reverseLinkedList(node.next);
+            System.out.println("tmp:" + tmp);
+            node.next.next = node;
+            node.next = null;
+            prev = tmp;
+        }
+        return prev;
+    }
+
+    //https://juejin.im/post/6844904058562543623#heading-1
+
+    /**
+     * curr 旧结点
+     * prev 存储新结点
+     * nextTemp 暂存旧结点位置
+     *
+     * @return
+     */
+    public static Node reverseLinkedList2() {
+//        Node prev = null;
+//        Node curr = head;
+//        while (curr != null) {
+//            //暂时存储旧结点对应的下一个结点
+//            Node nextTemp = curr.next;
+//            //构造新结点，其中data不变，next为新队列
+//            curr.next = prev;
+//            //将新结点保存在新队列中
+//            prev = curr;
+//            //遍历下一个旧结点
+//            curr = nextTemp;
+//        }
+//        return prev;
+
+        Node prev = null;
+        Node temp = head.next;
+        while (temp != null) {
+            Node nextNode = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = nextNode;
+        }
+        return prev;
+    }
+
+
 }
 
 class Node {
@@ -203,5 +303,13 @@ class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data=" + data +
+                ", next=" + next +
+                '}';
     }
 }
