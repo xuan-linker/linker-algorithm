@@ -17,5 +17,47 @@ public class ArrayStackTest1 {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
+
+        System.out.println(" ---浏览器--- ");
+        BrowserStack browserStack = new BrowserStack();
+        System.out.println(browserStack.add("1"));
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.add("2"));
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.back());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.back());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.back());
+        System.out.println(browserStack.toString());
+
+
+        System.out.println(browserStack.forward());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.forward());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.add("3"));
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.forward());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.back());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.back());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.forward());
+        System.out.println(browserStack.toString());
+
+        System.out.println(browserStack.forward());
+        System.out.println(browserStack.toString());
     }
 }
