@@ -24,5 +24,20 @@ public class ArrayQueueTest {
         System.out.println(arrayQueue.dequeue());
         System.out.println(arrayQueue.toString());
 
+        System.out.println("---LinkedArrayQueue2---");
+        ArrayQueue2 queue2 = new ArrayQueue2();
+        System.out.println(queue2.enqueue(1));
+        System.out.println(queue2.enqueue(2));
+        System.out.println(queue2.enqueue(3));
+        System.out.println(queue2.enqueue(4));
+        System.out.println("---LinkedArrayQueue2- 出队--");
+
+        System.out.println(queue2.dequeue());
+        System.out.println(queue2.dequeue());
+        System.out.println(queue2.dequeue());
+        System.out.println(queue2.dequeue());
+        System.out.println(queue2.dequeue());
+
+
     }
 }
