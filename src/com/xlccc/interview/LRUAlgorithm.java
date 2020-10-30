@@ -1,5 +1,7 @@
 package com.xlccc.interview;
 
+import java.util.LinkedList;
+
 /**
  * @author Linker
  * @date 2020/7/21 9:48
@@ -22,18 +24,33 @@ public class LRUAlgorithm {
 
     /**
      * LinkedHashMap
-     *
+     * <p>
      * 1. get(key)
      * 获取并将数据提取到队列头
      * if(cache.get(demo)){
-     *    如果不存在则返回-1
-     *    return -1;
+     * 如果不存在则返回-1
+     * return -1;
      * }
-     *
-     *
+     * <p>
+     * <p>
      * 2. put(key,value)
      * 插入队列头；
      * 如果超过缓存容量，则删除久未使用的队列尾元素，再插入队列头
      * 如果存在则替换原数据
      */
+
+    LinkedList<Integer> linkedList = new LinkedList<>();
+
+    /**
+     * 添加缓存
+     * 查询缓存
+     * 删除多余缓存
+     *
+     *
+     * @param number
+     */
+    public static void add(int number) {
+
+
+    }
 }
