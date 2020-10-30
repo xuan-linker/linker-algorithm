@@ -1,5 +1,7 @@
 package com.xlccc.data.structure.and.algorithms.linkedlist.homework;
 
+import java.util.Queue;
+
 /**
  * @author Linker
  * @date 2020/10/30 17:17
@@ -37,6 +39,33 @@ public class ArrayQueueTest {
         System.out.println(queue2.dequeue());
         System.out.println(queue2.dequeue());
         System.out.println(queue2.dequeue());
+
+        System.out.println("---ArrayQueue3 ---");
+        ArrayQueue3 queue3 = new ArrayQueue3(4);
+        System.out.println(queue3.enqueue(1));
+        System.out.println(queue3.enqueue(2));
+        System.out.println(queue3.enqueue(3));
+        System.out.println(queue3.enqueue(4));
+        System.out.println(queue3.toString());
+
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.toString());
+
+        System.out.println(queue3.enqueue(1));
+        System.out.println(queue3.enqueue(2));
+        System.out.println(queue3.enqueue(3));
+        System.out.println(queue3.enqueue(4));
+        System.out.println(queue3.toString());
+
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
+        System.out.println(queue3.dequeue());
 
 
     }

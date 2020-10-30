@@ -1,7 +1,5 @@
 package com.xlccc.data.structure.and.algorithms.linkedlist.homework;
 
-import sun.security.acl.PermissionImpl;
-
 /**
  * @author Linker
  * @date 2020/10/30 18:58
