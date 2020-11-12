@@ -23,8 +23,14 @@ public class MyStringList implements StringList {
             next = next.getNextNode();
         }
         if (next.getNextNode() == null) {
+            //insert new node
+            SNode newNext = head;
+            while (null != newNext.getNextNode() && newNext.getNextNode().getData().compareTo(s) < 0) {
+                newNext = newNext.getNextNode();
+            }
             SNode newNode = new SNode(s);
-            next.setNext(newNode);
+            newNode.setNext(newNext.getNextNode());
+            newNext.setNext(newNode);
         } else {
             //the item exist
             next.getNextNode().increment();
@@ -83,6 +89,27 @@ public class MyStringList implements StringList {
         return head.getNextNode();
     }
 
+//    /**
+//     * Traverse all data.
+//     *
+//     * @return all data
+//     */
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("MyStringList : ");
+//        SNode next = head;
+//        while (null != next.getNextNode()) {
+//            sb.append(" [ data : ")
+//                    .append(next.getNextNode().getData())
+//                    .append(" ,count : ")
+//                    .append(next.getNextNode().getCount())
+//                    .append(" ] ");
+//            next = next.getNextNode();
+//        }
+//        return sb.toString();
+//    }
+
     /**
      * Traverse all data.
      *
@@ -90,17 +117,17 @@ public class MyStringList implements StringList {
      */
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("MyStringList : ");
+        String result = new String();
+        result += "MyStringList : ";
         SNode next = head;
         while (null != next.getNextNode()) {
-            sb.append(" [ data : ")
-                    .append(next.getNextNode().getData())
-                    .append(" ,count : ")
-                    .append(next.getNextNode().getCount())
-                    .append(" ] ");
+            result += " [ data : ";
+            result += next.getNextNode().getData();
+            result += " ,count : ";
+            result += next.getNextNode().getCount();
+            result += " ] ";
             next = next.getNextNode();
         }
-        return sb.toString();
+        return result;
     }
 }

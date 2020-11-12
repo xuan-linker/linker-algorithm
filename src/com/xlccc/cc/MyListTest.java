@@ -14,13 +14,11 @@ public class MyListTest {
     public static MyStringList initList() {
         MyStringList.head = new SNode();
         MyStringList list = new MyStringList();
-
         //init data
         list.insert("Hello");
         list.insert("hello");
         list.insert("hello");
         list.insert("HELLO");
-
         return list;
     }
 
@@ -38,154 +36,243 @@ public class MyListTest {
     /**
      * Test for firstNode with empty list.
      *
-     * @return success or fail
+     * @return PASS or FAIL
      */
-    public static ResultEnum firstEmptyTest() {
+    public static String firstEmptyTest() {
         //init without no data
         MyStringList list = new MyStringList();
         SNode sNode = list.firstNode();
         if (sNode == null) {
-            return ResultEnum.success;
+            return "PASS";
         } else {
-            return ResultEnum.fail;
+            return "FAIL";
         }
     }
 
     /**
      * Test for firstNode with list include data .
      *
-     * @return success or fail
+     * @return PASS or FAIL
      */
-    public static ResultEnum firstNotEmptyTest() {
+    public static String firstNotEmptyTest() {
         //init without data
         MyStringList list = initList();
         SNode sNode = list.firstNode();
         if (sNode != null) {
-            return ResultEnum.success;
+            return "PASS";
         } else {
-            return ResultEnum.fail;
+            return "FAIL";
         }
     }
 
     /**
-     * Test for insert.
+     * Test for success insert.
      *
-     * @return success or fail
+     * @return PASS or FAIL
      */
-    public static ResultEnum insertTest() {
+    public static String insertTest() {
         MyStringList list = initEmptyList();
         if (MyStringList.head.getNextNode() != null) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
         list.insert("Hello");
 
         if (MyStringList.head.getNextNode() != null) {
-            return ResultEnum.success;
+            return "PASS";
         } else {
-            return ResultEnum.fail;
+            return "FAIL";
         }
+    }
+
+    /**
+     * Test for inset order.
+     *
+     * @return
+     */
+    public static String insertOrderTest() {
+        String trueResult = "MyStringList :  [ data : HELLO ,count : 1 ]  [ data : Hello ,count : 1 ]  [ data : hello ,count : 1 ] ";
+
+        //first
+        MyStringList.head = new SNode();
+        MyStringList list = new MyStringList();
+        list.insert("hello");
+        list.insert("Hello");
+        list.insert("HELLO");
+        if (!list.toString().equals(trueResult)) {
+            return "FAIL";
+        }
+
+        //second
+        MyStringList.head = new SNode();
+        list.insert("hello");
+        list.insert("HELLO");
+        list.insert("Hello");
+        if (!list.toString().equals(trueResult)) {
+            return "FAIL";
+        }
+
+        //third
+        MyStringList.head = new SNode();
+        list.insert("Hello");
+        list.insert("hello");
+        list.insert("HELLO");
+        if (!list.toString().equals(trueResult)) {
+            return "FAIL";
+        }
+
+        return "PASS";
     }
 
     /**
      * Test for delete
      *
-     * @return success or fail
+     * @return PASS or FAIL
      */
-    public static ResultEnum deleteTest() {
+    public static String deleteTest() {
         MyStringList list = initList();
 
         String key1 = "hello";
         list.delete(key1);
         if (list.findCount(key1) != 1) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
         list.delete(key1);
         if (list.findCount(key1) != 0) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
         list.delete(key1);
         if (list.findCount(key1) != 0) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
         String key2 = "HELLO";
         list.delete(key2);
         if (list.findCount(key2) != 0) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
         String key3 = "Hello";
         list.delete(key3);
         if (list.findCount(key3) != 0) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
         list.delete(key3);
         if (list.findCount(key2) != 0) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
-        return ResultEnum.success;
+        return "PASS";
     }
 
+    /**
+     * Test for delete all.
+     *
+     * @return PASS or FAIL
+     */
+    public static String deleteAllTest() {
+        MyStringList.head = new SNode();
+        MyStringList list = new MyStringList();
+
+        String key1 = "none";
+        try {
+            list.delete(key1);
+            int count = list.findCount(key1);
+            if (count != 0) {
+                return "FAIL";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "FAIL";
+        }
+
+        return "PASS";
+    }
 
     /**
-     * Test for findCount
+     * Test for find count for exist data.
      *
-     * @return success or fail
+     * @return PASS or FAIL
      */
-    public static ResultEnum findCountTest() {
+    public static String findCountTest() {
         MyStringList list = initList();
         int count1 = list.findCount("hello");
         if (count1 != 2) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
         int count2 = list.findCount("HELLO");
         if (count2 != 1) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
         int count3 = list.findCount("Hello");
         if (count3 != 1) {
-            return ResultEnum.fail;
+            return "FAIL";
         }
 
-        return ResultEnum.success;
+        return "PASS";
     }
 
-    public static ResultEnum toStringTest() {
+    /**
+     * Test for find count for none.
+     *
+     * @return
+     */
+    public static String findNoneCountTest() {
+        MyStringList list = new MyStringList();
+        MyStringList.head = new SNode();
+
+        String key = "Linker";
+        int count = list.findCount(key);
+        if (count != 0) {
+            return "FAIL";
+        }
+        return "PASS";
+    }
+
+    public static String toStringTest() {
         MyStringList list = initList();
         System.out.println(list.toString());
         if (list.toString() != null) {
-            return ResultEnum.success;
+            return "PASS";
         } else {
-            return ResultEnum.fail;
+            return "FAIL";
         }
     }
 
+
     public static void main(String[] args) {
-        System.out.println("-------FirstTest--------");
-        ResultEnum firstTestResult = firstEmptyTest();
-        System.out.println("FirstEmptyTest : " + firstTestResult.getMessage());
-        ResultEnum firstNotEmptyTest = firstNotEmptyTest();
-        System.out.println("FirstNotEmptyTest : " + firstNotEmptyTest.getMessage());
+        System.out.println("-------FirstTest(2)--------");
+        String firstTestResult = firstEmptyTest();
+        System.out.println("FirstEmptyTest : " + firstTestResult);
+        String firstNotEmptyTest = firstNotEmptyTest();
+        System.out.println("FirstNotEmptyTest : " + firstNotEmptyTest);
 
-        System.out.println("-------InsertTest--------");
-        ResultEnum insertTestResult = insertTest();
+
+        System.out.println("-------InsertTest(2)--------");
+        String insertTestResult = insertTest();
         System.out.println("InsertTestResult : " + insertTestResult);
+        String insertOrderTestResult = insertOrderTest();
+        System.out.println("InsertOrderTestResult : " + insertOrderTestResult);
 
-        System.out.println("-------deleteTest--------");
-        ResultEnum deleteResultEnum = deleteTest();
-        System.out.println("DeleteTest : " + deleteResultEnum);
+        System.out.println("-------deleteTest(2)--------");
+        String deleteTestResult = deleteTest();
+        System.out.println("DeleteTestResult : " + deleteTestResult);
 
-        System.out.println("--------FindCountTest-------");
-        ResultEnum findCountTestResult = findCountTest();
+        String deleteAllTestResult = deleteAllTest();
+        System.out.println("DeleteAllTestResult : " + deleteAllTestResult);
+
+        System.out.println("--------FindCountTest(2)-------");
+        String findCountTestResult = findCountTest();
         System.out.println("FindCountTestResult : " + findCountTestResult);
+        String noneCountTestResult = findNoneCountTest();
+        System.out.println("NoneCountTestResult : " + noneCountTestResult);
 
-        System.out.println("-------ToStringTestResult--------");
-        ResultEnum toStringTestResult = toStringTest();
+        System.out.println("-------ToStringTestResult(1)--------");
+        String toStringTestResult = toStringTest();
         System.out.println("ToStringTestResult : " + toStringTestResult);
+
 
     }
 }
