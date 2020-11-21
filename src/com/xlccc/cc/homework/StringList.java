@@ -1,4 +1,4 @@
-package com.xlccc.cc;
+package com.xlccc.cc.homework;
 
 /**
  * This is the interface you must implement to complete the assignment.

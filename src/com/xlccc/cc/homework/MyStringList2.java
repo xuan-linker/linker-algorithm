@@ -1,4 +1,4 @@
-package com.xlccc.cc;
+package com.xlccc.cc.homework;
 
 /**
  * @author Linker

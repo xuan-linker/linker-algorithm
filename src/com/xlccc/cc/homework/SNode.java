@@ -1,4 +1,4 @@
-package com.xlccc.cc;
+package com.xlccc.cc.homework;
 
 /**
  * This class contains the basic node structure for the linked list.
