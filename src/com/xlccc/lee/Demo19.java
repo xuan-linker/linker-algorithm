@@ -32,21 +32,60 @@ public class Demo19 {
             pred = pred.next;
         }
         ListNode root = head;
+        ListNode tempBefore = null;
         for (int i = 1; i < count - n + 1; i++) {
+            tempBefore = root;
             root = root.next;
         }
-        root.next= root.next.next;
+        tempBefore.next = tempBefore.next.next;
         return head;
     }
+//    //双指针
+//    public ListNode removeNthFromEnd(ListNode head, int n) {
+//
+//        ListNode result = head;
+//        ListNode first = null;
+//        ListNode second = null;
+//        ListNode tempBefore = null;
+//
+//        for (int i = 0; i < n-1; i++) {
+//            if (i == 0) {
+//                first = head;
+//            } else {
+//                first = first.next;
+//            }
+//        }
+//        while (first.next != null) {
+//            first = first.next;
+//            tempBefore = second;
+//            if (second == null) {
+//                second = head;
+//            } else {
+//                second = second.next;
+//            }
+//        }
+//        tempBefore.next = tempBefore.next.next;
+//
+//        return result;
+//
+//    }
+
 
     public static void main(String[] args) {
+//        ListNode root = new ListNode(1);
+//        root.next = new ListNode(2);
+//        root.next.next = new ListNode(3);
+//        root.next.next.next = new ListNode(4);
+//        root.next.next.next.next = new ListNode(5);
+
         ListNode root = new ListNode(1);
-        root.next = new ListNode(2);
-        root.next.next = new ListNode(3);
-        root.next.next.next = new ListNode(4);
-        root.next.next.next.next = new ListNode(5);
+
         Demo19 d = new Demo19();
-        d.removeNthFromEnd(root, 2);
-        System.out.println("Hello");
+//        ListNode listNode = d.removeNthFromEnd(root, 2);
+        ListNode listNode = d.removeNthFromEnd(root, 1);
+        while (listNode != null) {
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
     }
 }
