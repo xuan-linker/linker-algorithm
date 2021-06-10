@@ -23,16 +23,16 @@ public class Demo72 {
             char c1 = word1.charAt(i - 1);
             for (int j = 1; j <= word2.length(); j++) {
                 char c2 = word2.charAt(j - 1);
+                //如果相同
                 if (c1 == c2) {
                     table[i][j] = table[i - 1][j - 1];
+                    //如果不相同，则删除、修改、替换
                 } else {
                     table[i][j] = min(table[i - 1][j - 1], table[i - 1][j], table[i][j - 1]) + 1;
                 }
             }
         }
-
         return table[table.length - 1][table[table.length - 1].length - 1];
-
     }
 
     private int min(int a, int b, int c) {
